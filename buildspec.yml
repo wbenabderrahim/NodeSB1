@@ -1,0 +1,24 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - echo Installing Jasmine...
+      - npm install -g jasmine
+      - npm install cheerio
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install 
+      - chmod 0777 ./node_modules/.bin/jasmine-node
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - npm test 
+artifacts:
+  files:
+    - '**/*'
