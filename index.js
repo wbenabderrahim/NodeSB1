@@ -9,7 +9,7 @@ app.set('views',__dirname+'/views');
 app.use('/', router)
 
  var server = app.listen("8081",function(){
-    console.log('running  on port 3000'); 
+    console.log('running  on port 8081'); 
 }); 
 
 module.exports = app ;
